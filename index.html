@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="navigationStyle.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>AVPRG Kurs</title>
+    </head>
+    <body>
+        <ul>
+            <li><a class="active">Home</a></li>
+            <li><a href="Aufgaben/Aufgabe1/index.html">Aufgabe 1</a></li>
+            <li><a href="Aufgaben/Aufgabe2/index.html">Aufgabe 2</a></li>
+            <li><a href="Aufgaben/Aufgabe3/index.html">Aufgabe 3</a></li>
+            <li><a href="Aufgaben/AufgabeA1a/index.html">Aufgabe A1a</a></li>
+            <li><a href="Aufgaben/AufgabeA1b/index.html">Aufgabe A1b</a></li>
+            <li><a href="Aufgaben/Aufgabe4/index.html">Aufgabe 4</a></li>
+            <li><a href="Aufgaben/Aufgabe5/index.html">Aufgabe 5</a></li>
+            <li><a href="Aufgaben/Aufgabe6/index.html">Aufgabe 6</a></li>
+            <li><a href="Aufgaben/Aufgabe7/index.html">Aufgabe 7</a></li>
+            <li><a href="Aufgaben/Aufgabe8/index.html">Aufgabe 8</a></li>
+            <li><a href="Aufgaben/AufgabeA2/index.html">Aufgabe A2</a></li>
+            <li><a href="Aufgaben/Aufgabe9/index.html">Aufgabe 9</a></li>
+            <li><a href="Aufgaben/Aufgabe10/index.html">Aufgabe 10</a></li>
+            <li><a href="Aufgaben/Aufgabe11/index.html">Aufgabe 11</a></li>
+            <li><a href="Aufgaben/Aufgabe12/index.html">Aufgabe 12</a></li>
+            <li><a href="Aufgaben/Aufgabe13/index.html">Aufgabe 13</a></li>
+            <li><a href="Aufgaben/AufgabeA3a/index.html">Aufgabe A3a</a></li>
+            <li><a href="Aufgaben/AufgabeA3b/index.html">Aufgabe A3b</a></li>
+        </ul>
+
+        <div id="mainContainer">
+            <!-- some scripting for the keynote presentations-->
+            <h1>Wilkommen im AVPRG Kurs!</h1>
+            <p>Hier findet ihr alle Präsentationen, Aufgaben, Tipps und Lösungen.</p>
+            <p><small>Link zum GitHub Repository: <a href="https://github.com/jakobsudau/AVPRG">https://github.com/jakobsudau/AVPRG</a></small></p>
+
+            <button id="button1" class="button" data-url="00GNyEwDVAhGqff2w_5fQvttQ" title="selected">1</button>
+            <button id="button2" class="button" data-url="0F4-fH-lNEH4BTl1YGAV-aIaQ">2</button>
+            <button id="button3" class="button" data-url="0WPtLg3CjNMh_XyHrUJIuiOhQ">3</button>
+            <button id="button4" class="button" data-url="0dyWc3U_LlHQW9vpvRln3ElOw">4</button>
+            <button id="button5" class="button" data-url="0G0A5v3aDIeT9P38Y4axMl8Gw">5</button>
+
+            <div class="embed-container">
+                <div id="loadingDiv">Präsentation laden<br></div>
+                <iframe id="presFrame" src="https://www.icloud.com/keynote/00GNyEwDVAhGqff2w_5fQvttQ?embed=true" width="600em" height="385em" frameborder="0" allowfullscreen="1" referrer="no-referrer"></iframe>
+            </div>
+            <script>
+                let presFrame = document.querySelector("#presFrame");
+                let loadingDiv = document.querySelector("#loadingDiv");
+                presFrame.onload = function() {
+                    presFrame.style.zIndex = 2;
+                    loadingDiv.style.zIndex = 1;
+                };
+
+                var dots = window.setInterval( function() {
+                if ( loadingDiv.innerHTML.length > 24 )
+                    loadingDiv.innerHTML = "Präsentation laden<br>";
+                else
+                    loadingDiv.innerHTML += ".";
+                }, 300);
+
+                var presButtons = document.getElementsByClassName("button");
+
+                for (let i = 0; i < presButtons.length; i++) {
+                    presButtons[i].addEventListener("mousedown", function (e) {
+                        presFrame.style.zIndex = 1;
+                        document.querySelector("#loadingDiv").style.zIndex = 2;
+                        presFrame.src = "https://www.icloud.com/keynote/" + e.target.getAttribute("data-url") + "?embed=true";
+                        for (let i = 0; i < presButtons.length; i++) {presButtons[i].title = ""};
+                        e.target.title = "selected";
+                    });
+                };
+            </script>
+            <!----------------------------------->
+        </div>
+    </body>
+</html>
