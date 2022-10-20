@@ -8,7 +8,14 @@
         <script src="../../navigation.js" onload="init(10)"></script>
         <div id="mainContainer">
             <!-- Dies ist der Code für die Aufgabe-->
-            <h1>Hier entsteht Aufgabe 8</h1>
+            <button id="playStopButton">Play</button>
+
+            <div id="distortionContainer"> Distortion
+                <input type="range" min="0" max="100" value="0" class="slider" id="distortionSlider">
+                <span id="distortionOutput">0</span>
+            </div>
+
+            <script src="distortion.js"></script>
             <!-------------------------------------->
         </div>
     </body>

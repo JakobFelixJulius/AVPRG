@@ -1,0 +1,33 @@
+html, body {
+    background: #1dba9d;
+    height: 100%;
+    color: #316769;
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+#outputText {
+    font-size: 3em;
+    background-color: #ffaf44;
+}
+
+#myButton {
+    background-color: #e0d336;
+    border: none;
+    color: #1dba9d;
+    font-size: 2.8em;
+    padding: 0.5em 1.5em;
+}
+
+#myButton:active {
+   background: #ffffff;
+}
+
+#myMidiInput {
+    font-size: 2em;
+    text-align: center;
+
+}

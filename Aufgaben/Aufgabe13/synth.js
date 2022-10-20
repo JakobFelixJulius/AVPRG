@@ -42,99 +42,40 @@ var allFrequencies = [
     8372.018089619156,  8869.844191259906,  9397.272573357044,
     9956.06347910659,   10548.081821211836, 11175.303405856126,
     11839.8215267723,   12543.853951415975];
-    let buttons = document.getElementsByClassName("button");
-
-let context = new AudioContext();
-let masterGain = context.createGain();
-let lfo = context.createOscillator();
-let lfoGain = context.createGain();
-let convolver = context.createConvolver();
-let filter = context.createBiquadFilter();
-let distortion = context.createWaveShaper();
-
-let oscillators = [[], []];
-let velocityVolumes = [[], []];
-
-let attack = 0.1;
-let release = 0.1
-let octaveShifter = 60;
-
-lfo.frequency.value = 6;
-lfoGain.gain.value = 0.05;
-lfo.start(context.currentTime);
-lfo.connect(lfoGain);
-
-masterGain.gain.value = 1;
-
-distortion.connect(filter);
-filter.connect(convolver);
-convolver.connect(masterGain);
-masterGain.connect(context.destination);
-
+var buttons = document.getElementsByClassName("button");
+var context = new AudioContext();
+var octaveShifter = 60;
+var oscillators = [];
+var velocityVolumes = [];
 
 for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("mousedown", function() {startNote(i + octaveShifter, 127)});
-    buttons[i].addEventListener("mouseup", function() {stopNote(i + octaveShifter, 0)});
+    buttons[i].addEventListener('mousedown', function(){startNote(i+octaveShifter, 127)});
+    buttons[i].addEventListener('mouseup', function(){stopNote(i+octaveShifter, 0)});
 }
 
-document.querySelector("#lfoSlider").addEventListener("input", function(e) {
-    lfo.frequency.value = this.value;
-    document.querySelector("#lfoOutput").innerHTML = this.value + " Hz";
-});
-
-document.querySelector("#attackSlider").addEventListener("input", function(e) {
-    attack = this.value / 100;
-    document.querySelector("#attackOutput").innerHTML = attack + " sec";
-});
-
-document.querySelector("#releaseSlider").addEventListener("input", function(e) {
-    release = this.value / 100;
-    document.querySelector("#releaseOutput").innerHTML = release + " sec";
-});
-
-
-
 for (let i = 0; i < 127; i++) {
-    for (let j = 0; j < 2; j++) {
-        velocityVolumes[j][i] = context.createGain();
-        velocityVolumes[j][i].connect(distortion);
-    }
+    velocityVolumes[i] = context.createGain();
+    velocityVolumes[i].connect(context.destination);
 }
 
 function startNote(note, velocity) {
-    let oscTypes = ["sine", "sawtooth"];
-
-    for (let i = 0; i < 2; i++) {
-        oscillators[i][note] = context.createOscillator();
-        oscillators[i][note].type = oscTypes[i];
-        oscillators[i][note].frequency.value = allFrequencies[note];
-        if (i === 1) { oscillators[i][note].detune.value = 2;}
-
-        velocityVolumes[i][note].gain.cancelScheduledValues(0);
-        velocityVolumes[i][note].gain.setValueAtTime(0, context.currentTime);
-
-        lfoGain.connect(velocityVolumes[i][note].gain);
-        oscillators[i][note].connect(velocityVolumes[i][note]);
-        oscillators[i][note].start();
-
-        //attack
-        velocityVolumes[i][note].gain.linearRampToValueAtTime(0.05 + (0.33 * (velocity/127)), context.currentTime + attack);
-    }
+    velocityVolumes[note].gain.value = velocity / 127;
+    oscillators[note] = context.createOscillator();
+    oscillators[note].frequency.value = allFrequencies[note];
+    oscillators[note].connect(velocityVolumes[note]);
+    oscillators[note].start(context.currentTime);
 }
 
 function stopNote(note, velocity) {
-    for (let i = 0; i < 2; i++) {
-        //release
-        velocityVolumes[i][note].gain.cancelScheduledValues(0);
-        velocityVolumes[i][note].gain.linearRampToValueAtTime(0, context.currentTime + attack + release);
-        oscillators[i][note].stop(context.currentTime + attack + release + 0.1);
-    }
+    velocityVolumes[note].gain.cancelScheduledValues(0);
+    velocityVolumes[note].gain.linearRampToValueAtTime(0, context.currentTime + 0.003);
+    oscillators[note].stop(context.currentTime + 0.005);
 }
 
-function controlChange(controllerNr, value) {
-    // do something...
+function controlChange(controlNr, value) {
+    console.log(controlNr + ", " + value);
 }
 
-function pitchBend(LSB, HSB) {
-    // do something...
+function pitchBend(LSBrange, MSBrange) {
+    console.log(LSBrange + ", " + MSBrange);
 }

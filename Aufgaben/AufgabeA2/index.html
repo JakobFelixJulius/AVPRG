@@ -7,9 +7,106 @@
     <body>
         <script src="../../navigation.js" onload="init(11)"></script>
         <div id="mainContainer">
-            <!-- Dies ist der Code für die Aufgabe-->
-            <h1>Hier entsteht Aufgabe A2</h1>
-            <!-------------------------------------->
+            <!-- Dies ist der Code für die Aufgabe -->
+            <button id="playStopButton">Play</button>
+
+            <div id="gainContainer"> Gain
+                <input type="range" min="0" max="100" value="10" class="slider" id="gainSlider">
+                <span id="gainOutput">1.0 dB</span>
+            </div>
+
+            <div id="panningContainer"> Panning
+                <input type="range" min="0" max="100" value="50" class="slider" id="panningSlider">
+                <span id="panningOutput">0 LR</span>
+            </div>
+
+            <div id="delayContainer"> Delay
+                <input type="range" min="0" max="100" value="0" class="slider" id="delaySlider">
+                <span id="delayOutput">0 sec</span>
+            </div>
+
+            <div id="distortionContainer"> Distortion
+                <input type="range" min="0" max="100" value="0" class="slider" id="distortionSlider">
+                <span id="distortionOutput">0</span>
+            </div>
+
+            <div id="reverbContainer">Reverb
+                <select id="reverbSelectList">
+                    <option value="room">Room</option>
+                    <option value="church">Church</option>
+                    <option value="cave">Cave</option>
+                    <option value="garage">Garage</option>
+                </select>
+                <button id="reverbButton" value=true>Turn Off</button>
+            </div>
+
+            <div id="compressorContainer"> Compressor
+                <div id="thresholdContainer"> Threshold
+                    <input type="range" min="0" max="100" value="76" class="compressorSlider" id="thresholdSlider">
+                    <span id="thresholdOutput">-24 dB</span>
+                </div>
+    
+                <div id="ratioContainer"> Ratio
+                    <input type="range" min="0" max="100" value="60" class="compressorSlider" id="ratioSlider">
+                    <span id="ratioOutput">12 dB</span>
+                </div>
+    
+                <div id="kneeContainer"> Knee
+                    <input type="range" min="0" max="100" value="75" class="compressorSlider" id="kneeSlider">
+                    <span id="kneeOutput">30 degree</span>
+                </div>
+    
+                <div id="attackContainer"> Attack
+                    <input type="range" min="0" max="1000" value="3" class="compressorSlider" id="attackSlider">
+                    <span id="attackOutput">0.003 sec</span>
+                </div>
+    
+                <div id="releaseContainer"> Release
+                    <input type="range" min="0" max="1000" value="10" class="compressorSlider" id="releaseSlider">
+                    <span id="releaseOutput">0.25 sec</span>
+                </div>
+    
+                <div id="reductionOutput">Reduction: 0 dB</div>
+            </div>
+
+            <div id="filterContainer">
+                Filter
+                <div id="frequencyContainer"> Frequency
+                    <input type="range" min="1000" max="20000" value="1000" class="filterSlider" id="frequencySlider">
+                    <span id="frequencyOutput">1000 Hz</span>
+                </div>
+    
+                <div id="detuneContainer"> Detune
+                    <input type="range" min="0" max="100" value="0" class="filterSlider" id="detuneSlider">
+                    <span id="detuneOutput">0 cents</span>
+                </div>
+    
+                <div id="qContainer"> Quality
+                    <input type="range" min="0" max="100" value="0" class="filterSlider" id="qSlider">
+                    <span id="qOutput">0</span>
+                </div>
+    
+                <div id="gainContainer"> Gain
+                    <input type="range" min="-40" max="40" value="0" class="filterSlider" id="gainSlider">
+                    <span id="gainOutput">0 dB</span>
+                </div>
+    
+                <div id="typeContainer">Type
+                    <select id="filterSelectList">
+                        <option value="lowpass">Lowpass</option>
+                        <option value="highpass">Highpass</option>
+                        <option value="bandpass">Bandpass</option>
+                        <option value="allpass">Allpass</option>
+                        <option value="lowshelf">lowshelf</option>
+                        <option value="highshelf">highshelf</option>
+                        <option value="peaking">Peaking</option>
+                        <option value="notch">Notch</option>
+                    </select>
+                </div>
+            </div>
+
+            <script src="effects.js"></script>
+            <!--------------------------------------->
         </div>
     </body>
 </html>

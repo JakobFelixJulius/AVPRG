@@ -2,13 +2,42 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <title>AVPRG Aufgabe 6</title>
+        <title>AVPRG Aufgabe 8</title>
     </head>
     <body>
         <script src="../../navigation.js" onload="init(8)"></script>
         <div id="mainContainer">
             <!-- Dies ist der Code für die Aufgabe-->
-            <h1>Hier entsteht Aufgabe 6</h1>
+            <button id="playStopButton">Play</button>
+
+            <div id="thresholdContainer"> Threshold
+                <input type="range" min="0" max="100" value="76" class="slider" id="thresholdSlider">
+                <span id="thresholdOutput">-24 dB</span>
+            </div>
+
+            <div id="ratioContainer"> Ratio
+                <input type="range" min="0" max="100" value="60" class="slider" id="ratioSlider">
+                <span id="ratioOutput">12 dB</span>
+            </div>
+
+            <div id="kneeContainer"> Knee
+                <input type="range" min="0" max="100" value="75" class="slider" id="kneeSlider">
+                <span id="kneeOutput">30 degree</span>
+            </div>
+
+            <div id="attackContainer"> Attack
+                <input type="range" min="0" max="1000" value="3" class="slider" id="attackSlider">
+                <span id="attackOutput">0.003 sec</span>
+            </div>
+
+            <div id="releaseContainer"> Release
+                <input type="range" min="0" max="1000" value="10" class="slider" id="releaseSlider">
+                <span id="releaseOutput">0.25 sec</span>
+            </div>
+
+            <div id="reductionOutput">Reduction: 0 dB</div>
+
+            <script src="compressor.js"></script>
             <!-------------------------------------->
         </div>
     </body>

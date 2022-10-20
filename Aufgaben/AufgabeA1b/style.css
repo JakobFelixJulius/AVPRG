@@ -1,0 +1,11 @@
+html, body {
+    height: 100%;
+    background: #a78660;
+    text-align: center;
+    color: #e0d336;
+}
+
+h1 {
+    user-select: none;
+    font-size: 5em;
+}

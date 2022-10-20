@@ -1,0 +1,25 @@
+html, body {
+    background: #1d72ba;
+    height: 100%;
+    color: #316769;
+    text-align: center;
+}
+
+#playStopButton {
+    margin-left: 0.6em;
+    margin-bottom: 0.5em;
+    background-color: #e09236;
+    border: none;
+    color: #ffffff;
+    font-size: 0.8em;
+    padding: 0.5em 1.5em;
+    font-size: 2em;
+}
+
+#playStopButton:active {
+   background: #ffffff;
+}
+
+#selectList {
+    font-size: 2em;
+}

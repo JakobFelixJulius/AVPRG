@@ -2,13 +2,20 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <title>AVPRG Aufgabe 10</title>
+        <title>AVPRG Aufgabe 12</title>
     </head>
     <body>
         <script src="../../navigation.js" onload="init(13)"></script>
         <div id="mainContainer">
             <!-- Dies ist der Code für die Aufgabe-->
-            <h1>Hier entsteht Aufgabe 10</h1>
+            <button id="playStopButton">Play</button>
+            <button id="switchStereoButton">Switch Stereo</button>
+
+            <div id="stereoContainer"> L Gain R
+                <input type="range" min="-100" max="100" value="0" id="stereoSlider" class="slider">
+            </div>
+
+            <script src="stereoSplitter.js"></script>
             <!-------------------------------------->
         </div>
     </body>

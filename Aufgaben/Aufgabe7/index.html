@@ -2,14 +2,49 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <title>AVPRG Aufgabe 7</title>
+        <title>AVPRG Aufgabe 9</title>
     </head>
     <body>
         <script src="../../navigation.js" onload="init(9)"></script>
         <div id="mainContainer">
             <!-- Dies ist der Code für die Aufgabe-->
-            <h1>Hier entsteht Aufgabe 7</h1>
+            <button id="playStopButton">Play</button>
+
+            <div id="frequencyContainer"> Frequency
+                <input type="range" min="1000" max="20000" value="1000" class="slider" id="frequencySlider">
+                <span id="frequencyOutput">1000 Hz</span>
+            </div>
+
+            <div id="detuneContainer"> Detune
+                <input type="range" min="0" max="100" value="0" class="slider" id="detuneSlider">
+                <span id="detuneOutput">0 cents</span>
+            </div>
+
+            <div id="qContainer"> Quality
+                <input type="range" min="0" max="100" value="0" class="slider" id="qSlider">
+                <span id="qOutput">0</span>
+            </div>
+
+            <div id="gainContainer"> Gain
+                <input type="range" min="-40" max="40" value="0" class="slider" id="gainSlider">
+                <span id="gainOutput">0 dB</span>
+            </div>
+
+            <div id="typeContainer">Type
+                <select id="selectList">
+                    <option value="lowpass">Lowpass</option>
+                    <option value="highpass">Highpass</option>
+                    <option value="bandpass">Bandpass</option>
+                    <option value="allpass">Allpass</option>
+                    <option value="lowshelf">lowshelf</option>
+                    <option value="highshelf">highshelf</option>
+                    <option value="peaking">Peaking</option>
+                    <option value="notch">Notch</option>
+                </select>
+            </div>
+
+            <script src="filter.js"></script>
             <!-------------------------------------->
-        </div>
+            </div>
     </body>
 </html>

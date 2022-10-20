@@ -1,0 +1,32 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    width: 50%;
+    height: 50%;
+    float: left;
+}
+
+#div1:active, #div2:active, #div3:active, #div4:active {
+   background: #ffffff;
+}
+
+#div1 {
+    background: #F79F79;
+}
+
+#div2 {
+    background: #F7D08A;
+}
+
+#div3 {
+    background: #E3F09B;
+}
+
+#div4 {
+    background: #87B6A7;
+}

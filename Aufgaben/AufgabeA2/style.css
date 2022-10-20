@@ -1,0 +1,141 @@
+html, body {
+    padding: 0; margin: 0;
+    text-align: center;
+    background: #1dba9d;
+    color: #e0d336;
+}
+
+div {
+    font-size: 30px;
+}
+
+#playStopButton {
+    background-color: #e0d336;
+    border: none;
+    color: #1dba9d;
+    font-size: 2em;
+    padding: 0.5em 1.5em;
+    margin-bottom: 1em;
+}
+
+#playStopButton:active {
+   background: #ffffff;
+}
+
+.compressorSlider, .filterSlider, .slider {
+    margin: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.compressorSlider:hover, .filterSlider:hover, .slider:hover {
+    opacity: 1;
+}
+
+.compressorSlider::-webkit-slider-thumb, .filterSlider::-webkit-slider-thumb, .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #1dba9d;
+    cursor: pointer;
+}
+
+#gainContainer {
+    background: #F79F79;
+    width: 100%;
+}
+
+#panningContainer {
+    background: #5b6f69;
+    width: 100%;
+}
+
+#delayContainer {
+    background: #7883bf;
+    width: 100%;
+}
+
+#reverbContainer {
+    background: #4a6cdb;
+    width: 100%;
+}
+
+
+#compressorContainer, #filterContainer {
+    width: 50%;
+    float: left;
+    margin-top: 1em;
+}
+
+#thresholdContainer {
+    background: #d6ae95;
+    width: 100%;
+}
+
+#ratioContainer {
+    background: #dda785;
+    width: 100%;
+}
+
+#kneeContainer {
+    background: #db976d;
+    width: 100%;
+}
+
+#attackContainer {
+    background: #db8b5a;
+    width: 100%;
+}
+
+#releaseContainer {
+    background: #db824a;
+    width: 100%;
+}
+
+#reductionOutput {
+    background: #de793a;
+}
+
+#frequencyContainer {
+    background: #d69595;
+    width: 100%;
+}
+
+#detuneContainer {
+    background: #dd8585;
+    width: 100%;
+}
+
+#qContainer {
+    background: #db6d6d;
+    width: 100%;
+}
+
+#gainContainer {
+    background: #db5a5a;
+    width: 100%;
+}
+
+#distortionContainer {
+    background: #d05adb;
+    width: 100%;
+}
+
+#typeContainer {
+    background: #db4a4a;
+    width: 100%;
+}
+
+#reverbSelectList, #filterSelectList  {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 0.8em;
+}

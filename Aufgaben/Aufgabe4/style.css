@@ -1,0 +1,63 @@
+html, body {
+    padding: 0; margin: 0;
+    text-align: center;
+    background: #1dba9d;
+    color: #e0d336;
+}
+
+div {
+    font-size: 1.5em;
+}
+
+#gainContainer {
+    background: #F79F79;
+    width: 100%;
+}
+
+#panningContainer {
+    background: #5b6f69;
+    width: 100%;
+}
+
+#delayContainer {
+    background: #7883bf;
+    width: 100%;
+}
+
+#playStopButton {
+    background-color: #e0d336;
+    border: none;
+    color: #1dba9d;
+    font-size: 2.8em;
+    padding: 0.5em 1.5em;
+}
+
+#playStopButton:active {
+   background: #ffffff;
+}
+
+.slider {
+    margin: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #1dba9d;
+    cursor: pointer;
+}
