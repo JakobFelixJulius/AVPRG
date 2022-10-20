@@ -1,14 +1,102 @@
+
 <!doctype html>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <title>AVPRG Aufgabe A3b</title>
+        <title>AVPRG Aufgabe A3a</title>
     </head>
     <body>
         <script src="../../navigation.js" onload="init(18)"></script>
         <div id="mainContainer">
             <!-- Dies ist der Code für die Aufgabe-->
-            <h1>Hier entsteht Aufgabe A3ab</h1>
+             <!-- Dies ist der Code für die Aufgabe-->
+
+        <button id="button1" class="button">1</button>
+        <button id="button2" class="button">2</button>
+        <button id="button3" class="button">3</button>
+        <button id="button4" class="button">4</button>
+
+        <div id="attackContainer"> Attack
+            <input type="range" min="0" max="100" value="10" class="slider" id="attackSlider">
+            <span id="attackOutput" class="output">0.1 sec</span>
+        </div>
+
+        <div id="releaseContainer"> Release
+            <input type="range" min="0" max="100" value="10" class="slider" id="releaseSlider">
+            <span id="releaseOutput" class="output">0.1 sec</span>
+        </div>
+
+        <div id="lfoContainer"> LFO
+            <input type="range" min="0" max="100" value="6" class="slider" id="lfoSlider">
+            <span id="lfoOutput" class="output">6 Hz</span>
+        </div>
+
+        <div id="attackContainer">Attack
+            <input type="range" min="0" max="100" value="10" class="slider" id="attackSlider">
+            <span id="attackOutput" class="output">0.1</span>
+        </div>
+
+         <div id="releaseContainer">Release
+            <input type="range" min="0" max="100" value="10" class="slider" id="releaseSlider">
+            <span id="releaseOutput" class="output">0.1</span>
+        </div>
+
+        <!-- Distortion Controls-->
+         <div id="distortionContainer">Distortion Curve
+            <input type="range" min="0" max="100" value="6" class="slider" id="distortionSlider">
+            <span id="distortionOutput" class="output">6</span>
+        </div>
+
+        <!-- Filter Controls-->
+        <div id="frequencyContainer">Frequency
+            <input type="range" min="20" max="20000" value="1000" class="slider" id="frequencySlider">
+            <span id="frequencyOutput" class="output">1000 Hz</span>
+        </div>
+
+        <div id="detuneContainer">Detune
+            <input type="range" min="0" max="100" value="0" class="slider" id="detuneSlider">
+            <span id="detuneOutput" class="output">0 cents</span>
+        </div>
+
+        <div id="qContainer">Quality
+            <input type="range" min="0" max="100" value="0" class="slider" id="qSlider">
+            <span id="qOutput" class="output">0</span>
+        </div>
+
+        <div id="gainContainer">Gain
+            <input type="range" min="-40" max="40" value="0" class="slider" id="gainSlider">
+            <span id="gainOutput" class="output">0 dB</span>
+        </div>
+
+        <div id="typeContainer">Filter Type
+            <select id="filterSelectList">
+                <option value="lowpass">Lowpass</option>
+                <option value="highpass">Highpass</option>
+                <option value="bandpass">Bandpass</option>
+                <option value="allpass">Allpass</option>
+                <option value="lowshelf">lowshelf</option>
+                <option value="highshelf">highshelf</option>
+                <option value="peaking">Peaking</option>
+                <option value="notch">Notch</option>
+            </select>
+        </div>
+
+        <!-- Reverb Controls-->
+        <div id="reverbContainer">Reverb Type
+            <select id="convolverSelectList">
+                <option value="cave">Cave</option>
+                <option value="church">Church</option>
+                <option value="garage">Garage</option>
+                <option value="room">Room</option>
+            </select>
+        </div>
+
+        <script src="midi.js"></script>
+        <script src="synth.js"></script>
+        <script src="filter.js"></script>
+        <script src="distortion.js"></script>
+        <script src="convolver.js"></script>
+        <!-------------------------------------->
             <!-------------------------------------->
         </div>
     </body>

@@ -1,5 +1,5 @@
 if (navigator.requestMIDIAccess) {
-    navigator.requestMIDIAccess({sysex: false}).then(function(midiAccess) {
+    navigator.requestMIDIAccess({sysex: false}).then(function (midiAccess) {
         midi = midiAccess;
         var inputs = midi.inputs.values();
         // loop through all inputs
@@ -18,22 +18,22 @@ function onMIDIMessage(event) {
     // event.data[1] = midi note
     // event.data[2] = velocity
 
-    switch(event.data[0]) {
-        case 144:
-            // your function startNote(note, velocity)
-            startNote(event.data[1], event.data[2]);
-            break;
-        case 128:
-            // your function stopNote(note, velocity)
-            stopNote(event.data[1], event.data[2]);
-            break;
-        case 176:
-            // your function controlChange(controllerNr, value)
-            controlChange(event.data[1], event.data[2]);
-            break;
-        case 224:
-            // your function pitchBend(LSB, HSB)
-            pitchBend(event.data[1], event.data[2]);
-            break;
+    switch (event.data[0]) {
+    case 144:
+        // your function startNote(note, velocity)
+        startNote(event.data[1], event.data[2]);
+        break;
+    case 128:
+        // your function stopNote(note, velocity)
+        stopNote(event.data[1], event.data[2]);
+        break;
+    case 176:
+        // your function controlChange(controllerNr, value)
+        controlChange(event.data[1], event.data[2]);
+        break;
+    case 224:
+        // your function pitchBend(LSB, HSB)
+        pitchBend(event.data[1], event.data[2]);
+        break;
     }
 }
