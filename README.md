@@ -2,7 +2,7 @@
 
 Hier findet ihr nach und nach allen Source Code für die Beispiele & Aufgaben aus der Vorlesung.
 
-Die die Homepage & Live-Demos der Aufgaben findet ihr auf: https://jakobfelixjulius.github.io/AVPRG/
+Die die Homepage & Live-Demos der Aufgaben findet ihr auf: https://jakobsudau.github.io/AVPRG/
 
 ## Aufgaben
 

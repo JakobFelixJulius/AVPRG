@@ -1,0 +1,108 @@
+
+html, body {
+    padding: 0; margin: 0;
+    text-align: center;
+    background: #1dba9d;
+    color: #e0d336;
+}
+
+div {
+    font-size: 1.5em;
+    font-family: monospace;
+}
+
+
+#releaseContainer {
+    background: #49b169;
+}
+
+#attackContainer {
+    background: #2c7e45;
+}
+
+#lfoContainer {
+    background: #6bc787;
+}
+
+button {
+    background-color: #e0d336;
+    border: none;
+    color: #ffffff;
+    font-size: 2.8em;
+    padding: 0.5em 1.5em;
+    font-family: monospace;;
+}
+
+button:active {
+   background: #ffffff;
+    color: #e0d336;
+}
+
+.slider {
+    margin: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #1dba9d;
+    cursor: pointer;
+}
+
+
+#releaseContainer {
+    background: #49b169;
+}
+
+#attackContainer {
+    background: #2c7e45;
+}
+
+#distortionContainer {
+    background: #2c5b7e;
+}
+
+#frequencyContainer {
+    background: #9d5151;
+}
+
+#detuneContainer {
+    background: #864949;
+}
+
+#qContainer {
+    background: #643131;
+}
+
+#gainContainer {
+    background: #4d2f2f;
+}
+
+#typeContainer {
+    background: #402828;
+}
+
+#reverbContainer {
+    background: #5a4062;
+}
+
+select {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 0.8em;
+}
